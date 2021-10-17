@@ -25,7 +25,7 @@ const MovieDetails = ({ movieDetail, favoritsMovies, setFavoritsMovies }) => {
 	const renderNoMovieSelected = () => {
 		return (
 			<div className='alert alert-secondary' role='alert'>
-				Click on a movie, In Order to see the movie's detailes
+				Click on a movie, to see the movie's detailes
 			</div>
 		);
 	};
@@ -45,7 +45,7 @@ const MovieDetails = ({ movieDetail, favoritsMovies, setFavoritsMovies }) => {
 								className='btn btn-sm btn-dark float-end'
 							>
 								<i className='fas fa-bookmark me-2'></i>
-								Add to Favories
+								Add to Favorite
 							</button>
 						)}
 						{!isFavorite && (
@@ -54,7 +54,7 @@ const MovieDetails = ({ movieDetail, favoritsMovies, setFavoritsMovies }) => {
 								className='btn btn-sm btn-danger float-end'
 							>
 								<i className='fas fa-trash-alt me-2'></i>
-								Remove from Favories
+								Remove from Favorite
 							</button>
 						)}
 					</div>

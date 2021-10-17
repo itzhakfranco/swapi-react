@@ -20,8 +20,7 @@ const MovieItem = ({ setMovieDetail, movieData, movieDetail }) => {
 				<strong className='mb-1'>{movieData.title}</strong>
 			</div>
 			<div className='col-10 mb-1 small'>
-				{movieData.opening_crawl.slice(0, 100)}
-				<i className='fas fa-ellipsis-h'></i>
+				{movieData.opening_crawl.slice(0, 100) + "..."}
 			</div>
 		</div>
 	);
