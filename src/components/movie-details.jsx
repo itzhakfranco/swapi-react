@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import Header from "./header";
 
 const MovieDetails = ({ movieDetail, favoritsMovies, setFavoritsMovies }) => {
+	const [isFavorite, setIsFavorite] = useState(false);
+
 	useEffect(() => {
-		const isMovieInFavorites = favoritsMovies.filter(
+		const isFavorite = favoritsMovies.filter(
 			(favoritMovie) => favoritMovie.episode_id === movieDetail.episode_id
 		);
-		setIsFavorite(isMovieInFavorites.length === 0);
+		setIsFavorite(isFavorite.length === 0);
 	}, [favoritsMovies, movieDetail.episode_id]);
-
-	const [isFavorite, setIsFavorite] = useState(false);
 
 	const addToFavorites = () =>
 		setFavoritsMovies([...favoritsMovies, movieDetail]);
@@ -24,7 +24,7 @@ const MovieDetails = ({ movieDetail, favoritsMovies, setFavoritsMovies }) => {
 
 	return (
 		<div className='col-md-8'>
-			<Header title={"Movie Detailes Section"} />
+			<Header title='Movie Detailes Section' />
 			<div className='card'>
 				<div className='card-header'>
 					Directer: {movieDetail.director}

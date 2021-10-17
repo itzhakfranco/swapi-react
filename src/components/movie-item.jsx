@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
 
 const MovieItem = ({ setMovieDetail, movieData, movieDetail }) => {
+	const [isActive, setIsActive] = useState(false);
+	const onClickMovieItem = () => setMovieDetail(movieData);
+
 	useEffect(() => {
-		const test = movieData.episode_id === movieDetail.episode_id;
-		setIsActive(test);
+		setIsActive(movieData.episode_id === movieDetail.episode_id);
 	}, [movieData.episode_id, movieDetail.episode_id]);
 
-	const className = () => {
+	const movieItemClassName = () => {
 		let className = "list-group-item list-group-item-action py-3 lh-tight";
 		if (isActive) className += " active";
 		return className;
 	};
-	const [isActive, setIsActive] = useState(false);
+
 	return (
-		<div className={className()} onClick={() => setMovieDetail(movieData)}>
+		<div className={movieItemClassName()} onClick={onClickMovieItem}>
 			<div className='d-flex align-items-center justify-content-between'>
 				<strong className='mb-1'>{movieData.title}</strong>
 			</div>

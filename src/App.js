@@ -4,6 +4,7 @@ import axios from "axios";
 
 import MovieList from "./components/movie-list";
 import MovieDetails from "./components/movie-details";
+import PreLoader from "./components/utils/pre-loader";
 
 function App() {
 	const [moviesData, setMoviesData] = useState([]);
@@ -38,7 +39,9 @@ function App() {
 	return (
 		<div className='container'>
 			<div className='row'>
-				{moviesData.length > 0 && (
+				{moviesData.length === 0 ? (
+					<PreLoader />
+				) : (
 					<MovieList
 						moviesData={moviesData}
 						setMovieDetail={setMovieDetail}
