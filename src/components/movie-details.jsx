@@ -31,7 +31,7 @@ const MovieDetails = ({ movieDetail, favoritsMovies, setFavoritsMovies }) => {
 	};
 
 	return (
-		<>
+		<div className='col-md-8'>
 			<Header title='Movie Detailes Section' />
 			{Object.keys(movieDetail).length === 0 ? (
 				renderNoMovieSelected()
@@ -71,7 +71,7 @@ const MovieDetails = ({ movieDetail, favoritsMovies, setFavoritsMovies }) => {
 					</div>
 				</div>
 			)}
-		</>
+		</div>
 	);
 };
 

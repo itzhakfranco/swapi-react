@@ -39,24 +39,24 @@ function App() {
 	return (
 		<div className='container'>
 			<div className='row'>
-				<div className='col-md-4'>
-					{moviesData.length === 0 ? (
-						<PreLoader />
-					) : (
+				{moviesData.length === 0 ? (
+					<PreLoader />
+				) : (
+					<>
 						<MovieList
 							moviesData={moviesData}
 							setMovieDetail={setMovieDetail}
 							movieDetail={movieDetail}
 						/>
-					)}
-				</div>
-				<div className='col-md-8'>
-					<MovieDetails
-						movieDetail={movieDetail}
-						favoritsMovies={favoritsMovies}
-						setFavoritsMovies={setFavoritsMovies}
-					/>
-				</div>
+						<div className='col-md-8'>
+							<MovieDetails
+								movieDetail={movieDetail}
+								favoritsMovies={favoritsMovies}
+								setFavoritsMovies={setFavoritsMovies}
+							/>
+						</div>
+					</>
+				)}
 			</div>
 		</div>
 	);
