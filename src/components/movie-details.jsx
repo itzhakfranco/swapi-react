@@ -33,6 +33,7 @@ const MovieDetails = ({ movieDetail, favoritsMovies, setFavoritsMovies }) => {
 							onClick={addToFavorites}
 							className='btn btn-sm btn-dark float-end'
 						>
+							<i className='fas fa-bookmark me-2'></i>
 							Add to Favories
 						</button>
 					)}
@@ -41,16 +42,20 @@ const MovieDetails = ({ movieDetail, favoritsMovies, setFavoritsMovies }) => {
 							onClick={removeFromFavorites}
 							className='btn btn-sm btn-danger float-end'
 						>
+							<i className='fas fa-trash-alt me-2'></i>
 							Remove from Favories
 						</button>
 					)}
 				</div>
-
 				<div className='card-body'>
-					<h5 className='card-title'>{movieDetail.title}</h5>
+					<div style={{ display: "flex", alignItems: "baseline" }}>
+						<i className='fas fa-video float me-2'></i>
+						<h5 className='card-title'>{movieDetail.title}</h5>
+					</div>
 					<p className='card-text'>{movieDetail.opening_crawl}</p>
 				</div>
 				<div className='card-footer text-muted'>
+					<i className='fas fa-calendar-alt me-2'></i>
 					Release Date: {movieDetail.release_date}
 				</div>
 			</div>
