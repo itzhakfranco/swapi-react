@@ -25,7 +25,7 @@ const MovieDetails = ({ movieDetail, favoritsMovies, setFavoritsMovies }) => {
 	const renderNoMovieSelected = () => {
 		return (
 			<div className='alert alert-secondary' role='alert'>
-				Click on a movie, to see the movie's detailes
+				Click on a movie, to see the movie detailes.
 			</div>
 		);
 	};
