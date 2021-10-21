@@ -1,11 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const MovieItem = ({ setMovieDetail, movieData, movieDetail }) => {
-	useEffect(() => {
-		setIsActive(movieData.episode_id === movieDetail.episode_id);
+	const [isActive, setIsActive] = useState(false);
+
+	const handleIsActive = useMemo(() => {
+		return movieData.episode_id === movieDetail.episode_id;
 	}, [movieData.episode_id, movieDetail.episode_id]);
 
-	const [isActive, setIsActive] = useState(false);
+	useEffect(() => {
+		setIsActive(handleIsActive);
+	}, [handleIsActive]);
+
 	const onSelectMovie = () => setMovieDetail(movieData);
 
 	const movieItemClassName = () => {
